@@ -21,3 +21,7 @@ def data(file):
                 Car_Data = Car(current[0],current[1],current[2],current[3],current[4],current[5])
             myData.append(Car_Data)
     return myData 
+
+#def convertToNumbers(myData):
+    #for row in len(myData):
+        #myData[r].
