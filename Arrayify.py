@@ -22,6 +22,15 @@ def data(file):
             myData.append(Car_Data)
     return myData 
 
+def labels(file):
+    labels = []
+    with open(file,newline='') as csvfile:
+        reader = csv.reader(csvfile,delimiter=' ',quotechar='|')
+        for row in reader:
+            for column in row:
+                current = column.split(',')
+                labels.append(current[6])
+    return labels
 #def convertToNumbers(myData):
     #for row in len(myData):
         #myData[r].
