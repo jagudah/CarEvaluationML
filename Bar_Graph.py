@@ -6,24 +6,19 @@ def addLabels(x,y):
         plt.text(i,y[i],y[i])
 
 class main():
-    labels = labels("Car_Data.csv")
-    for string in labels:
-        print(string + "\n")
-    """attributes = {}
+    attributes = {}
     myData = data("Car_Data.csv")
     for index in range(len(myData)):
-        if myData[index].lugboat in attributes:
-            attributes[myData[index].lugboat] = attributes.get(myData[index].lugboat,0) + 1
+        if myData[index].safety in attributes:
+            attributes[myData[index].safety] = attributes.get(myData[index].safety,0) + 1
         else:
-            attributes[myData[index].lugboat] = 1
+            attributes[myData[index].safety] = 1
     Xvalues = list(attributes.keys())
     Yvalues = list(attributes.values())
-    plt.bar(Xvalues,Yvalues, color = 'blue',width = .6)
+    plt.bar(Xvalues,Yvalues, color = 'green',width = .4)
     addLabels(Xvalues,Yvalues)
-    plt.xlabel("Size of luggage in each car")
+    plt.xlabel("Safety")
     plt.ylabel("# of cars")
-    plt.title("Luggage size fit?")
+    plt.title("How safe is this car?")
     plt.show()
-
-
-    print(attributes)"""
+    print(attributes)
