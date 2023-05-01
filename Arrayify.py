@@ -36,6 +36,14 @@ def replaceDoors(string):
     string = string.replace("5more","4")
     return string
 
+def replaceLabels(labels):
+    for string in labels:
+        string = string.replace("unacc", "1")
+        string = string.replace("acc", "2")
+        string = string.replace("vgood","4")
+        string = string.replace("good", "3")
+        string = int(string)
+    return labels
 def data(file):
     myData = []
     with open(file,newline='') as csvfile:
@@ -47,7 +55,7 @@ def data(file):
             myData.append(Car_Data)
     return myData 
 
-def labels(file):
+def GivenLabels(file):
     labels = []
     with open(file,newline='') as csvfile:
         reader = csv.reader(csvfile,delimiter=' ',quotechar='|')
@@ -58,7 +66,6 @@ def labels(file):
     return labels
 
 def convertToNumbers(myData):
-    #seatCount = {"2" : 1, "4" : 2 , "5more" : 3 }
     for row in myData:
             row.buying = int(replace4ranks(row.buying))
             row.maint = int(replace4ranks(row.maint))
@@ -67,3 +74,9 @@ def convertToNumbers(myData):
             row.lugboat = int(replaceSize(row.lugboat))
             row.safety = int(replace4ranks(row.safety))
     return myData
+
+def trainingData(myData):
+    train = []
+    for i in range(len(myData)):
+        train.append([myData[i].buying,myData[i].maint,myData[i].doors,myData[i].persons,myData[i].lugboat,myData[i].safety])
+    return train
