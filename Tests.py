@@ -1,9 +1,10 @@
+'''This file was for testing the best way to understand the file, and convert into dataframe/array'''
 from Arrayify import *
 import numpy as np
 import matplotlib.pyplot as plt
 class main():
     '''labels = GivenLabels("Car_Data.csv")
-    for string in labels:
+    for string in labels: 
         print(string + "\n")'''
     url = ("https://archive.ics.uci.edu/ml/machine-learning-databases/car/car.data")
     myData = pd.read_csv(url,header=None)
